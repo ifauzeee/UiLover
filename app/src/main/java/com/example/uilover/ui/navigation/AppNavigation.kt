@@ -28,8 +28,9 @@ import com.example.uilover.R
 import com.example.uilover.ui.components.BottomNavigationBar
 import com.example.uilover.ui.screens.HomeScreen
 import com.example.uilover.ui.screens.IntroScreen
-import com.example.uilover.ui.screens.PlaceholderScreen
 import com.example.uilover.ui.screens.ProfileScreen
+import com.example.uilover.ui.screens.SettingsScreen
+import com.example.uilover.ui.screens.WalletScreen
 import com.example.uilover.ui.theme.DarkBlue
 
 @Composable
@@ -89,9 +90,9 @@ fun MainAppContainer() {
         Box(modifier = Modifier.padding(paddingValues)) {
             when (selectedTab) {
                 "Home" -> HomeScreen()
-                "Wallet" -> PlaceholderScreen(name = "Wallet")
+                "Wallet" -> WalletScreen()
                 "Profile" -> ProfileScreen()
-                "Settings" -> PlaceholderScreen(name = "Settings")
+                "Settings" -> SettingsScreen()
                 else -> HomeScreen()
             }
         }

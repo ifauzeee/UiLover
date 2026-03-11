@@ -36,6 +36,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -232,7 +233,7 @@ fun TrendItem(trend: Trend) {
         colors = CardDefaults.cardColors(containerColor = Color.White),
         modifier = Modifier
             .width(width = 205.dp)
-            .height(height = 260.dp)
+            .height(height = 280.dp)
             .padding(bottom = 8.dp)
     ) {
         Column {
@@ -251,8 +252,10 @@ fun TrendItem(trend: Trend) {
                 fontWeight = FontWeight.Bold,
                 color = TextGray,
                 maxLines = 2,
-                modifier = Modifier.padding(all = 8.dp)
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
             )
+            Spacer(modifier = Modifier.weight(1f))
             Text(
                 text = trend.subtitle,
                 fontSize = 12.sp,
